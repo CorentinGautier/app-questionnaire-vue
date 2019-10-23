@@ -28,11 +28,11 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Je suis perdu 
-### Je suis perdu 
 
-### Je suis perdu 
-### Je suis perdu 
+### séance 1
 
-### Je suis perdu 
+### objectif : finir le login
+### bcp de problème
+### page login OK mais revoir l'accès a la page suivante  
+
 
