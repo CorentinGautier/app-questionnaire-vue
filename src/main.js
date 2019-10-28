@@ -3,8 +3,8 @@ import App from './App.vue'
 import router from './router'
 import './registerServiceWorker'
 
-import BootstrapVue from 'bootstrap-vue'
-Vue.use(BootstrapVue);
+// import BootstrapVue from 'bootstrap-vue'
+// Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 

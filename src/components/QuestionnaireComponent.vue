@@ -1,27 +1,38 @@
 <template>
-  <div id="app" class="container">
+  <!-- v-cloak hides any un-compiled data bindings until the Vue instance is ready. -->
+  <div id="app" class="container" v-cloak>
     <h1 class="mb-4">Questionnaire </h1>
-    <b-card header="question entete" header-tag="header">
-      <ul>
-        <li v-for="question in quiz" :key="question">
-        {{question["question"]}}
-        </li>
-        <input type="radio" value="">  {{ question["choix1"]}}
-        <input type="radio">{{ question["choix2"]}}
-        <input type="radio">{{ question["choix3"] }}
-      </ul>
-    </b-card>
+<p> {{questions[i]["question"]}}
+
+
+      <div v-for="option in questions[i].options" :key="option">
+     <input type="checkBox" value="">{{option}}</div>
+     <br>
+      </div>
+      <!-- <input type="checkBox" value=""> {{ question[item][choix1] }}
+      //  <input type="checkBox" value=""> {{ question[item][choix2] }}
+      //  <input type="checkBox" value=""> {{ question[item][choix3] }} -->
   </div>
 </template>
 <script>
-import cgquiz from '../assets/questions.json'
+import questions from '../assets/questions.json'
+console.log(questions.questions[0])
+
 export default {
+  data () {
+    return {
+      questions: questions.questions
+    }
+  },
   computed: {
     quiz () {
-      return cgquiz.quiz.map(item => {
-        return item
+      return questions.questions.map(question => {
+        return question
       })
     }
+  },
+  props: {
+    i: Number
   }
 }
 </script>
