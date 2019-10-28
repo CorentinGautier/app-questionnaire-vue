@@ -3,7 +3,7 @@
     <QuestionnaireComponent msg="Questionnaire" :j=i />
     <input type="submit" v-on:click="avant" value="Question précédente" />
     <input type="submit" v-on:click="apres" value="Question suivante" />
-      <p>question n°{{i}}</p>
+      <p> question n°{{i}}/3</p>
   </div>
   <div v-else>
     <h1>Affichage des scores</h1>
@@ -16,7 +16,7 @@ export default {
   name: 'Questionnaire',
   data () {
     return {
-      i: 1,
+      i: 0,
       fin: false
     }
   },
@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     avant: function () {
-      if (this.i !== 1) {
+      if (this.i !== 0) {
         console.log('avant')
         this.i = this.i - 1
       } else {
@@ -33,7 +33,7 @@ export default {
       }
     },
     apres: function () {
-      if (this.i !== 3) {
+      if (this.i !== 2) {
         console.log('après')
         this.i = this.i + 1
       } else {
@@ -43,7 +43,7 @@ export default {
     },
     recommencer: function () {
       this.fin = false
-      this.i = 1
+      this.i = 0
     }
   }
 }

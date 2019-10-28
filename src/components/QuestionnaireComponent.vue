@@ -3,11 +3,11 @@
   <div id="app" class="container" v-cloak>
     <h1 class="mb-4">{{msg}} </h1>
     <p> {{questions[j]["question"]}} </p>
-      <input type="checkBox" value="">{{questions[j]["options1"]}}
+      <input type="checkBox" name="" value="">{{questions[j]["options1"]}}
       <br>
-      <input type="checkBox" value="">{{questions[j]["options2"]}}
+      <input type="checkBox" name="" value="">{{questions[j]["options2"]}}
       <br>
-      <input type="checkBox" value="">{{questions[j]["options3"]}}
+      <input type="checkBox" name="" value="">{{questions[j]["options3"]}}
       <br>
   </div>
 </template>
