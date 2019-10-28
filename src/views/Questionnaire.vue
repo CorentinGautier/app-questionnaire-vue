@@ -1,8 +1,13 @@
 <template>
-  <div class="login">
-    <QuestionnaireComponent msg="Questionnaire" :i="i" />
-    <input type="submit" onclick="avant()" value="Question précéfente" />
-    <input type="submit" onclick="apres()" value="Question suivante" />
+  <div v-if="fin == false">
+    <QuestionnaireComponent msg="Questionnaire" :j=i />
+    <input type="submit" v-on:click="avant" value="Question précédente" />
+    <input type="submit" v-on:click="apres" value="Question suivante" />
+      <p>question n°{{i}}</p>
+  </div>
+  <div v-else>
+    <h1>Affichage des scores</h1>
+    <input type="submit" v-on:click="recommencer" value="Recommencez" />
   </div>
 </template>
 <script>
@@ -11,7 +16,8 @@ export default {
   name: 'Questionnaire',
   data () {
     return {
-      i: 0
+      i: 1,
+      fin: false
     }
   },
   components: {
@@ -19,10 +25,25 @@ export default {
   },
   methods: {
     avant: function () {
-      this.i = this.i - 1
+      if (this.i !== 1) {
+        console.log('avant')
+        this.i = this.i - 1
+      } else {
+        console.log('avant bloqué')
+      }
     },
     apres: function () {
-      this.i = this.i - 1
+      if (this.i !== 3) {
+        console.log('après')
+        this.i = this.i + 1
+      } else {
+        console.log('fin des questions')
+        this.fin = true
+      }
+    },
+    recommencer: function () {
+      this.fin = false
+      this.i = 1
     }
   }
 }

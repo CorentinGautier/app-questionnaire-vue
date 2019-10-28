@@ -3,31 +3,25 @@
         {
             "id": "0",
             "question": "Qui a crée l iphone 11 ? ",
-            "options": [
-                "Apple",
-                "Samsung",
-                "Huawei"
-            ],
+            "options1": "Apple",
+            "options2": "Samsung",
+            "options3": "Huawei",
             "reponse": "Apple"
         },
         {
             "id": "1",
             "question": "Quelle est la capitale du Portugal?",
-            "options": [
-                "Apple",
-                "Samsung",
-                "Huawei"
-            ],
+            "options1": "Lisbonne",
+            "options2": "Porto",
+            "options3": "Prague",
             "reponse": "Lisbonne"
         },
         {
             "id": "2",
             "question": "comment je m appelle?",
-            "options": [
-                "Apple",
-                "Samsung",
-                "Huawei"
-            ],
+            "options1": "corentin",
+            "options2": "Gabin",
+            "options3": "Pedro",
             "reponse": "Pedro"
         }
     ]
