@@ -1,6 +1,6 @@
 <template>
   <div id='login'>
-    <h1>{{ msg }}</h1>
+    <h1>Login</h1>
     <form submit prevent='false'>
       <label for='cguserLastname'>LastName</label>
       <input type='text' name='userLastname' v-model='cguserLastname' placeholder='Nom' />
@@ -16,7 +16,6 @@
 </template>
 <script>
 export default {
-  name: 'Login',
   data () {
     return {
       cguserLastname: '',
