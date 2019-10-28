@@ -31,8 +31,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### séance 1
 
-### objectif : finir le login
-### bcp de problème
-### page login OK mais revoir l'accès a la page suivante  
+Objectif : finir le login
+bcp de problème
+ page login OK mais revoir l'accès a la page suivante  
+
+ ### séance 2
+
+Objectif : créer le composant questionnaire et le json
+
 
 
