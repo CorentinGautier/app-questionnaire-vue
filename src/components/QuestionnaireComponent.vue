@@ -1,20 +1,16 @@
 <template>
   <!-- v-cloak hides any un-compiled data bindings until the Vue instance is ready. -->
-  <div id="app" class="container" v-cloak>
-    <h1 class="mb-4">{{msg}} </h1>
-    <p> {{questions[j]["question"]}} </p>
-
-  <div v-for="option in questions[j].options" :key="option">
-     <input type="checkBox" v-model="checkedValue" value="">{{option}}
+  <div id="app" class="container">
+   <h1 class="mb-4">{{msg}} </h1>
+<div  v-if="questions.length > 0">
+  {{questions[j].question}}
+  <div v-for="option in questions[j].options" :key="option.intitule">
+  {{option.intitule}}
+     <input type="checkBox" v-model="option.reponseUser">
+     </div>
+       <p> v-model : {{ questions[0].options[0].reponseUser }} </p>
+      <p> v-model : {{ questions[0].options[1].reponseUser }} </p>
   </div>
-     <br>
-    <!-- // <input type="checkBox" name="" v-model="checkedValue" value="">{{questions[j]["options1"]}}
-      <br>
-      <input type="checkBox" name="" value="">{{questions[j]["options2"]}}
-      <br>
-      <input type="checkBox" name="" value="">{{questions[j]["options3"]}}
-      <br> -->
-    <p> selectionner : {{checkedValue}} </p>
   </div>
 </template>
 <script>
@@ -22,10 +18,10 @@ import questions from '../assets/questions.json'
 export default {
   data () {
     return {
-      checkedValue: [],
       questions: questions.questions
     }
   },
+  name: 'QuestionnaireComponent',
   props: {
     msg: String,
     j: Number

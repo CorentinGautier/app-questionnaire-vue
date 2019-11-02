@@ -1,37 +1,68 @@
 {
+    "nbQuestions": 3,
     "questions": [
         {
             "id": "0",
-            "question": "Qui a crée l iphone 11 ? ",
+            "question": "qui est le créateur de l'iphone 11?",
             "options": [
-                "Apple",
-                "Samsung",
-                "Huawei"
-            ],
-            "reponseUser": "",
-            "reponse": "Apple"
+                {
+                    "intitule": "Apple",
+                    "reponseUser": false,
+                    "valide": false
+                },
+                {
+                    "intitule": "Samsung ",
+                    "reponseUser": false,
+                    "valide": false
+                },
+                {
+                    "intitule": "Huawei",
+                    "reponseUser": false,
+                    "valide": false
+                }
+            ]
         },
         {
             "id": "1",
-            "question": "Quelle est la capitale du Portugal?",
+            "question": "capital de france ?",
             "options": [
-                "sfzgre",
-                "fdf",
-                "sdfd"
-            ],
-            "reponseUser": "",
-            "reponse": "Lisbonne"
+                {
+                    "intitule": "Paris",
+                    "reponseUser": false,
+                    "valide": false
+                },
+                {
+                    "intitule": "Nantes",
+                    "reponseUser": false,
+                    "valide": false
+                },
+                {
+                    "intitule": "Tours",
+                    "reponseUser": false,
+                    "valide": false
+                }
+            ]
         },
         {
             "id": "2",
-            "question": "comment je m appelle?",
+            "question": "Tu as kiffé ce questionnaire ?",
             "options": [
-                "dfs",
-                "Sadsqfgbnmsung",
-                "dfgd"
-            ],
-            "reponseUser": "",
-            "reponse": "Pedro"
+                {
+                    "intitule": "incroyable",
+                    "reponseUser": false,
+                    "valide": false
+                },
+                {
+                    "intitule": "oui",
+                    "reponseUser": false,
+                    "valide": false
+                },
+                {
+                    "intitule": "bod",
+                    "reponseUser": false,
+                    "valide": false
+                }
+            ]
         }
     ]
 }

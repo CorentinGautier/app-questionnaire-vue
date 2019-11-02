@@ -25,7 +25,7 @@
 <script>
 import PouchDB from 'pouchdb'
 var db = new PouchDB('users') // créer la bdd
-db.replicate.to('http://localhost:5984/users') // relie la bdd
+db.replicate.to('http://localhost:5984/users') //
 export default {
   data () {
     return {
@@ -41,27 +41,27 @@ export default {
         this.cguserLastname !== '' &&
         this.cgsocietyName !== ''
       ) {
-        var vm = this
+        var lui = this
         var user = { // creer un obj user
-          _id: Math.random().toString(36).substr(2, 9),
-          firstname: vm.cguserFirstname,
-          lastName: vm.cguserLastname,
-          socityName: vm.cgsocietyName
+          _id: Math.random().toString(36).substr(2, 9), // créer un id aléatoire
+          firstname: lui.cguserFirstname,
+          lastName: lui.cguserLastname,
+          socityName: lui.cgsocietyName
         }
         db.put(user).then(function (doc) { // ajout l'user dans la bdd
           console.log(doc)// retourne le doc avec ce qu'on a inserer dans la bdd
-          vm.$router.push(
+          lui.$router.push(
             '/questionnaire?cguserFirstname=' +
-            vm.cguserFirstname +
+            lui.cguserFirstname +
             '&cguserLastname=' +
-            vm.cguserLastname +
+            lui.cguserLastname +
             '&cgsocietyName=' +
-            vm.cgsocietyName
+            lui.cgsocietyName
           )
-          db.replicate.to('http://localhost:5984/users') // relie la bdd
+          db.replicate.to('http://localhost:5984/users') //   actualise
         })
       } else {
-        console.log = 'Please put your first/last name and your society name.'
+        console.log('Please put your first/last name and your society name.')
       }
     }
   }
