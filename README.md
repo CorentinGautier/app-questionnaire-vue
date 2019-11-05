@@ -12,6 +12,11 @@ Objectif : finir l'affichage des questions dans le json et afficher les résulta
 ok : enregistre les utilisateurs dans la BDD avec coucheDB
     permet de se balader entre les questions de mon JSON
 
+
+### travail chez moi
+Essayer de recupérer les réponses de l'utilisateur et ensuite de modifier le score si sa réponse est bonne
+
+
 ### séance 4
 faire l'admin
 
