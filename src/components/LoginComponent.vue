@@ -49,19 +49,18 @@ export default {
           socityName: lui.cgsocietyName
         }
         db.put(user).then(function (doc) { // ajout l'user dans la bdd
-          console.log(doc)// retourne le doc avec ce qu'on a inserer dans la bdd
+        // console.log(doc)// retourne le doc avec ce qu'on a inserer dans la bdd
           lui.$router.push(
             '/questionnaire?cguserFirstname=' +
             lui.cguserFirstname +
             '&cguserLastname=' +
             lui.cguserLastname +
             '&cgsocietyName=' +
-            lui.cgsocietyName
-          )
+            lui.cgsocietyName)
           db.replicate.to('http://localhost:5984/users') //   actualise
         })
       } else {
-        console.log('Please put your first/last name and your society name.')
+      // console.log('Please put your first/last name and your society name.')
       }
     }
   }

@@ -30,8 +30,5 @@ export default {
     check () {
     }
   }
-  // ,emitResult () {
-  //     this.$emit('input', this.result)
-  //   },
 }
 </script>
