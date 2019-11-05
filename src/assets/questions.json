@@ -8,7 +8,7 @@
                 {
                     "intitule": "Apple",
                     "reponseUser": false,
-                    "valide": false
+                    "valide": true
                 },
                 {
                     "intitule": "Samsung ",
@@ -29,7 +29,7 @@
                 {
                     "intitule": "Paris",
                     "reponseUser": false,
-                    "valide": false
+                    "valide": true
                 },
                 {
                     "intitule": "Nantes",
@@ -50,7 +50,7 @@
                 {
                     "intitule": "incroyable",
                     "reponseUser": false,
-                    "valide": false
+                    "valide": true
                 },
                 {
                     "intitule": "oui",
@@ -58,7 +58,7 @@
                     "valide": false
                 },
                 {
-                    "intitule": "bod",
+                    "intitule": "bof",
                     "reponseUser": false,
                     "valide": false
                 }

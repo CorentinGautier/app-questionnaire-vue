@@ -4,12 +4,14 @@
    <h1 class="mb-4">{{msg}} </h1>
 <div  v-if="questions.length > 0">
   {{questions[j].question}}
+  <!-- i=0;-->
   <div v-for="option in questions[j].options" :key="option.intitule">
   {{option.intitule}}
      <input type="checkBox" v-model="option.reponseUser">
-     </div>
-       <p> v-model : {{ questions[0].options[0].reponseUser }} </p>
-      <p> v-model : {{ questions[0].options[1].reponseUser }} </p>
+  </div>
+     <!-- <p> v-model : {{ questions[i].options[j].reponseUser }} </p>
+      <p> v-model : {{ questions[i].options[j].reponseUser }} </p>
+      <p> v-model : {{ questions[i].options[2].reponseUser }} </p> -->
   </div>
   </div>
 </template>
@@ -24,10 +26,21 @@ export default {
   name: 'QuestionnaireComponent',
   props: {
     msg: String,
-    j: Number
+    j: Number,
+    score: Number
   },
   methods: {
     check () {
+      var i = 0
+      var j = 0
+      for (j in questions[j]) {
+        for (i in questions[j].question[i]) {
+          if (questions[i].options[j].reponseUser === questions[i].option[j].valide) {
+            this.score++
+          }
+        }
+      }
+      console.log(this.score)
     }
   }
 }
