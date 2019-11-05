@@ -15,7 +15,7 @@ ok : enregistre les utilisateurs dans la BDD avec coucheDB
 
 ### travail chez moi
 Essayer de recupérer les réponses de l'utilisateur et ensuite de modifier le score si sa réponse est bonne
-
+erreur lors de la récupération des réponses
 
 ### séance 4
 faire l'admin
