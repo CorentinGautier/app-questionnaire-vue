@@ -1,30 +1,43 @@
 <template>
-  <!-- v-cloak hides any un-compiled data bindings until the Vue instance is ready. -->
-  <div id="app" class="container">
-   <h1 class="mb-4">{{msg}} </h1>
-<div  v-if="questions.length > 0">
-  {{questions[j].question}}
-  <!-- i=0;-->
-  <div v-for="option in questions[j].options" :key="option.intitule">
-  {{option.intitule}}
-     <input type="checkBox" v-model="option.reponseUser">
-  </div>
-  </div>
-  </div>
+    <div class="questionnaire">
+      <h1>{{msg}}</h1>
+      <p> {{ test[i].question }} </p>
+      <div v-for="option in test[i].options" :key="option">
+        <b-form-checkbox v-model="option.reponse_user" :value="true">
+          {{option.intitule}}
+        </b-form-checkbox>
+      </div>
+      <p> v-model : {{ test[0].options[0].reponse_user }} </p>
+      <p> v-model : {{ test[0].options[1].reponse_user }} </p>
+      <p> v-model : {{ test[0].options[2].reponse_user }} </p>
+      <p> v-model : {{ test[1].options[0].reponse_user }} </p>
+      <p> v-model : {{ test[1].options[1].reponse_user }} </p>
+      <p> v-model : {{ test[1].options[2].reponse_user }} </p>
+      <p> v-model : {{ test[2].options[0].reponse_user }} </p>
+      <p> v-model : {{ test[2].options[1].reponse_user }} </p>
+      <p> v-model : {{ test[2].options[2].reponse_user }} </p>
+      <br/>
+    </div>
 </template>
+
 <script>
-import questions from '../assets/questions.json'
+import test from '../assets/questionnaire.json'
+console.log(test)
 export default {
   data () {
     return {
-      questions: questions.questions
+      test: test.test
     }
   },
   name: 'QuestionnaireComponent',
   props: {
     msg: String,
-    j: Number,
-    score: Number
+    i: Number
+  },
+  methods: {
+    check: function () {
+      console.log('BONJOUR')
+    }
   }
 }
 </script>
