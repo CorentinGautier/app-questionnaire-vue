@@ -21,9 +21,14 @@ Bouton recommencer OK
 ### travail chez moi 2
 Erreur pour la récupération des réponses.
  ok : Création d'un composant pour afficher et calculer les résultats
-Erreur lors de la lecture de Json pour augmenter les résultats en fonction de chaque réponse correct 
+Erreur lors de la lecture de Json pour augmenter les résultats en fonction de chaque réponses corrects 
 Bouton recommencer NOK 
 
+### travail chez moi 3
+Erreur pour la récupération des réponses.
+Ajouyt de boostrapp vue
+Erreur lors de la lecture de Json pour augmenter les résultats en fonction de chaque réponses correctes
+Bouton recommencer OK 
 
 ### séance 4
 faire l'admin

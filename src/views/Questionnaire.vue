@@ -8,7 +8,7 @@
       <p> question n°{{i}}/3</p>
   </div>
   <div v-else>
-    <b-button  v-b-popover.hover.top="'Votre score actuel ne sera pas enregistré'" type="submit" v-on:click="recommencer" variant="outline-primary">Question précédente</b-button>
+    <b-button  v-b-popover.hover.top="'Votre score actuel ne sera pas enregistré'" type="submit" v-on:click="recommencer" variant="outline-primary">recommencer</b-button>
     <ResultComponent />
   </div>
 </template>
