@@ -7,7 +7,7 @@
             "options": [
                 {
                     "intitule": "Apple",
-                    "reponseUser": false,
+                    "reponseUser": true,
                     "valide": true
                 },
                 {

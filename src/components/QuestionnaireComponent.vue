@@ -9,9 +9,6 @@
   {{option.intitule}}
      <input type="checkBox" v-model="option.reponseUser">
   </div>
-     <!-- <p> v-model : {{ questions[i].options[j].reponseUser }} </p>
-      <p> v-model : {{ questions[i].options[j].reponseUser }} </p>
-      <p> v-model : {{ questions[i].options[2].reponseUser }} </p> -->
   </div>
   </div>
 </template>
@@ -28,20 +25,6 @@ export default {
     msg: String,
     j: Number,
     score: Number
-  },
-  methods: {
-    check () {
-      var i = 0
-      var j = 0
-      for (j in questions[j]) {
-        for (i in questions[j].question[i]) {
-          if (questions[i].options[j].reponseUser === questions[i].option[j].valide) {
-            this.score++
-          }
-        }
-      }
-      console.log(this.score)
-    }
   }
 }
 </script>

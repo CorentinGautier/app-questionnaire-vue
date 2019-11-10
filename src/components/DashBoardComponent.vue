@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'DashBoardComponent',
   props: {
     msg: String
   }

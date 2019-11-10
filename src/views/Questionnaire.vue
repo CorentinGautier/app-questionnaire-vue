@@ -6,12 +6,13 @@
       <p> question n°{{i}}/3</p>
   </div>
   <div v-else>
-    <h1>Affichage des scores</h1>
-    <input type="submit" v-on:click="recommencer" value="Recommencez" />
+    <input type="submit" v-on:click="Recommencer()" value="Recommencez" />
+    <ResultComponent />
   </div>
 </template>
 <script>
 import QuestionnaireComponent from '@/components/QuestionnaireComponent.vue'
+import ResultComponent from '@/components/ResultComponent.vue'
 export default {
   name: 'Questionnaire',
   data () {
@@ -21,7 +22,8 @@ export default {
     }
   },
   components: {
-    QuestionnaireComponent
+    QuestionnaireComponent,
+    ResultComponent
   },
   methods: {
     avant: function () {
