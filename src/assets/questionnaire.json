@@ -1,69 +1,68 @@
 {
     "nbQuestions": 3,
-    "test":[
-        {   
+    "test": [
+        {
             "id": "0",
-            "question": "Allez-vous bien ?",
-            "options":[
+            "question": "qui est le créateur de l'iphone 11?",
+            "options": [
                 {
-                    "intitule" :"on est là",
-                    "reponse_user" : false,
+                    "intitule": "Apple",
+                    "reponse_user": false,
                     "valide": false
                 },
                 {
-                    "intitule" :"ah oui oui",
-                    "reponse_user" : false,
+                    "intitule": "Huawei",
+                    "reponse_user": false,
                     "valide": false
                 },
                 {
-                    "intitule" :"non",
-                    "reponse_user" : false,
+                    "intitule": "Samsung",
+                    "reponse_user": false,
                     "valide": false
                 }
             ]
         },
         {
             "id": "1",
-            "question": "Fait-il beau ?",
-            "options":[
+            "question": "Capital de france ?",
+            "options": [
                 {
-                    "intitule" :"soleil",
-                    "reponse_user" : false,
+                    "intitule": "Nice",
+                    "reponse_user": false,
                     "valide": false
                 },
                 {
-                    "intitule" :"pluie",
-                    "reponse_user" : false,
+                    "intitule": "Nantes",
+                    "reponse_user": false,
                     "valide": false
                 },
                 {
-                    "intitule" :"ouragan",
-                    "reponse_user" : false,
+                    "intitule": "Paris",
+                    "reponse_user": false,
                     "valide": false
                 }
             ]
         },
         {
             "id": "2",
-            "question": "Question finale ?",
-            "options":[
+            "question": "VueJS tu aimes ça ? ",
+            "options": [
                 {
-                    "intitule" :"waouw",
-                    "reponse_user" : false,
+                    "intitule": "trop d'erreur d'indentation, c'est lourd",
+                    "reponse_user": false,
                     "valide": false
                 },
                 {
-                    "intitule" :"super",
-                    "reponse_user" : false,
+                    "intitule": "j'adore",
+                    "reponse_user": false,
                     "valide": false
                 },
                 {
-                    "intitule" :"génial",
-                    "reponse_user" : false,
+                    "intitule": "bof",
+                    "reponse_user": false,
                     "valide": false
                 }
             ]
         }
-
     ]
 }

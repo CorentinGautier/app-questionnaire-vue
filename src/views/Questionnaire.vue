@@ -1,11 +1,11 @@
 <template>
-  <div v-if="!fin">
-    <QuestionnaireComponent msg="Questionnaire : " :i=i />
+  <div v-if="!cgfin">
+    <QuestionnaireComponent msg="Questionnaire : " :cgi=cgi />
     <b-form>
     <b-button type="submit" v-on:click="avant" variant="outline-primary">Question précédente</b-button>
-    <b-button type="submit" v-on:click="apres" variant="outline-primary" :hidden="fin">Question précédente</b-button>
+    <b-button type="submit" v-on:click="apres" variant="outline-primary" :hidden="cgfin">Question précédente</b-button>
     </b-form>
-      <p> question n°{{i}}/{{nbQuestions}}</p>
+      <p> question n°{{cgi}}/{{cgnbQuestions}}</p>
   </div>
   <div v-else>
     <b-button  v-b-popover.hover.top="'Votre score actuel ne sera pas enregistré'" type="submit" v-on:click="recommencer" variant="outline-primary">recommencer</b-button>
@@ -20,9 +20,9 @@ export default {
   name: 'test',
   data () {
     return {
-      i: 0,
-      fin: false,
-      nbQuestions: test['nbQuestions']
+      cgi: 0,
+      cgfin: false,
+      cgnbQuestions: test['nbQuestions']
     }
   },
   computed: {
@@ -36,23 +36,23 @@ export default {
   },
   methods: {
     avant: function () {
-      if (this.i > 0) {
-        this.i = this.i - 1
-        this.fin = false
+      if (this.cgi > 0) {
+        this.cgi = this.cgi - 1
+        this.cgfin = false
       } else {
-        this.i = this.i
+        this.cgi = this.cgi
       }
     },
     apres: function () {
-      if (this.i < test['nbQuestions'] - 1) {
-        this.i = this.i + 1
+      if (this.cgi < test['nbQuestions'] - 1) {
+        this.cgi = this.cgi + 1
       } else {
-        this.fin = true
+        this.cgfin = true
       }
     },
     recommencer: function () {
-      this.fin = false
-      this.i = 0
+      this.cgfin = false
+      this.cgi = 0
     }
   }
 }

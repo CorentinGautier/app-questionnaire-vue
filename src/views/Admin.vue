@@ -6,7 +6,7 @@
 <script>
 import PouchDB from 'pouchdb'
 var db = new PouchDB('users') // créer la bdd
-db.replicate.to('http://localhost:5984/users') //
+db.replicate.to('http://localhost:5984/users') //lien vers la BDD
 export default {
   data () {
     return {

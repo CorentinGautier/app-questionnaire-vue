@@ -30,6 +30,13 @@ Ajouyt de boostrapp vue
 Erreur lors de la lecture de Json pour augmenter les résultats en fonction de chaque réponses correctes
 Bouton recommencer OK 
 
+### travail chez moi 4
+Affichage des questions OK
+récupérations des cases cochées en direct OK
+changemet sur le JSON NOK
+Score NOK
+Affichage des users dans l'admin NOK
+
 ### séance 4
 faire l'admin
 
