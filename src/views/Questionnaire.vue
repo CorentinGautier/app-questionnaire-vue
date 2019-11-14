@@ -1,11 +1,11 @@
 <template>
-  <div v-if="fin == false">
-    <QuestionnaireComponent msg="Questionnaire : " :j=i />
+  <div v-if="!fin">
+    <QuestionnaireComponent msg="Questionnaire : " :i=i />
     <b-form>
     <b-button type="submit" v-on:click="avant" variant="outline-primary">Question précédente</b-button>
     <b-button type="submit" v-on:click="apres" variant="outline-primary" :hidden="fin">Question précédente</b-button>
     </b-form>
-      <p> question n°{{i}}/3</p>
+      <p> question n°{{i}}/{{nbQuestions}}</p>
   </div>
   <div v-else>
     <b-button  v-b-popover.hover.top="'Votre score actuel ne sera pas enregistré'" type="submit" v-on:click="recommencer" variant="outline-primary">recommencer</b-button>
@@ -21,7 +21,8 @@ export default {
   data () {
     return {
       i: 0,
-      fin: false
+      fin: false,
+      nbQuestions: test['nbQuestions']
     }
   },
   computed: {

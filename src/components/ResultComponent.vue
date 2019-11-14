@@ -5,7 +5,7 @@
  <br>
  <b-button type="submit" v-on:click="check"  variant="outline-primary">Calculer mon score</b-button>
  <p v-if = 'displayScore'>
- {{ score }}
+ <p>Votre score est de : {{ score }}
  </p>
  </div>
 </template>

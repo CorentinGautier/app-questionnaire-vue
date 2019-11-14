@@ -1,5 +1,25 @@
 <template>
   <div class="admin">
-    <h1>On est dans l'admin</h1>
+    <button type='submit' v-on:click.stop.prevent='recupInfoUser()'>Display users who begin the test</button>
   </div>
 </template>
+<script>
+import PouchDB from 'pouchdb'
+var db = new PouchDB('users') // créer la bdd
+db.replicate.to('http://localhost:5984/users') //
+export default {
+  data () {
+    return {
+      users: []
+    }
+  },
+  methods: {
+    recupInfoUser () {
+      db.allDocs({
+        include_docs: true,
+        attachments: true
+      })
+    }
+  }
+}
+</script>
