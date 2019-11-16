@@ -1,67 +1,86 @@
 <template>
-    <div>
+<div>
+    <div v-if = '!displayScore'>
      <h1 class="mb-4 container">{{msg}}</h1>
      <b-card :header="test[cgi].question" header-tag="header">
-      <b-list-group>
-      <b-list-group-item v-for="(option,cgindex) in test[cgi].options" :key="option" @click="action(cgindex)">
-      <b-form-checkbox v-model="option.reponse_user" :value="true">
-          {{option.intitule}}
-        </b-form-checkbox>
-      </b-list-group-item>
+      <b-list-group v-if='responseOK' >
+        <b-list-group-item disabled v-for="(option,cgindex) in test[cgi].options" :key="option.intitule" @click="action(cgindex)">
+           <b-list-group-item name="question" v-model="option.reponse_user" :value="true">
+             {{option.intitule}}
+            </b-list-group-item>
+        </b-list-group-item>
+      </b-list-group>
+      <b-list-group v-if='!responseOK' >
+        <b-list-group-item  v-for="(option,cgindex) in test[cgi].options" :key="option.intitule" @click="action(cgindex)">
+          <b-list-group-item name="question" v-model="option.reponse_user" :value="true">
+            {{option.intitule}}
+          </b-list-group-item>
+        </b-list-group-item>
       </b-list-group>
       </b-card>
       <b-alert show>Votre score est : {{ score }} / {{ tailleQuestionnaire }}</b-alert>
-      <p> v-model : {{ test[0].options[0].reponse_user }} </p>
-      <p> v-model : {{ test[0].options[1].reponse_user }} </p>
-      <p> v-model : {{ test[0].options[2].reponse_user }} </p>
-      <p> v-model : {{ test[1].options[0].reponse_user }} </p>
-      <p> v-model : {{ test[1].options[1].reponse_user }} </p>
-      <p> v-model : {{ test[1].options[2].reponse_user }} </p>
-      <p> v-model : {{ test[2].options[0].reponse_user }} </p>
-      <p> v-model : {{ test[2].options[1].reponse_user }} </p>
-      <p> v-model : {{ test[2].options[2].reponse_user }} </p>
       <br/>
+    <b-button type="submit" v-on:click="recommencer" variant="outline-primary">Recommencer</b-button>
     </div>
+ <br/>
+ <div v-if = 'displayScore'>
+  <h1>Bravo, vous avez fini ! </h1>
+    <b-button type="submit" v-on:click="recommencer" variant="outline-primary">Recommencer</b-button>
+    <br/>
+ <b-alert show variant="success">Votre score est : {{ score }} / {{ tailleQuestionnaire }}</b-alert>
+ <b-alert show variant="danger">Votre nombre d'erreur est de : {{ nbErreur }}</b-alert>
+ </div>
+</div>
 </template>
 <script>
 import test from '../assets/questionnaire.json'
-console.log(test)
-console.log(test.test[1].question)
-console.log(test.test[1].options)
 export default {
   data () {
     return {
       test: test.test,
       tailleQuestionnaire: test['nbQuestions'],
       score: 0,
-      resp: String
+      resp: String,
+      displayScore: false,
+      passage: 0,
+      messages: [],
+      nbErreur: 0
     }
   },
   name: 'QuestionnaireComponent',
   props: {
     msg: String,
-    cgi: Number
+    cgi: Number,
+    responseOK: Boolean
   },
   methods: {
     action: function (cgindex) {
-      // cherche le libellé de la réponse
-      for (const options in test[this.cgi].options) {
-        for (const option in options[cgindex]) {
-          console.log(this.option)
-          if (option.valide === true) {
-            this.resp = this.option.intitule
-            console.log(this.resp)
-          }
+      if (this.passage === this.cgi) {
+        // cherche le libellé de la réponse
+        if (test.test[this.cgi].options[cgindex].valide === true) {
+          this.resp = test.test[this.cgi].options[cgindex].intitule
+          this.score = this.score + 1
+          this.responseOK = true
         }
+      } else {
+        this.passage = this.cgi
+        this.responseOK = false
+        this.nbErreur = this.nbErreur + 1
       }
-      // Test bonne réponse
-      for (let intitule in test[cgindex].options.intitule) {
-        if (intitule === this.resp) {
-          console.log(this.resp)
-          console.log(test.question[cgindex].options.valide)
-          this.score++
-        }
+      if (this.score === test['nbQuestions']) {
+        this.displayScore = true
       }
+      console.log(this.passage)
+      console.log(this.cgi)
+      console.log(this.score)
+      console.log(this.nbErreur)
+    },
+    recommencer: function () {
+      this.cgfin = false
+      this.cgi = 0
+      this.responseOK = false
+      this.score = 0
+      this.displayScore = false
     }
   }
 }

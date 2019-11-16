@@ -37,6 +37,22 @@ changemet sur le JSON NOK
 Score NOK
 Affichage des users dans l'admin NOK
 
+### travail chez moi 5
+Affichage des questions OK
+récupérations des cases cochées en direct OK
+Score OK,  reste plus que bloquer une réponse par question
+Affichage des users dans l'admin NOK
+
+### travail chez moi 6
+bloque les questions l'utilisateur à répondu
+pemret de recommencer, de refaire un question si le score est pas bon
+affiche le nb d'erreur si l'utilisteur en fait
+        a faire : ,
+  created: function () {
+		// this.$toast.add({ severity: 'warn', summary: 'Warn Message', detail: 'error', life: 3000 })
+  }
+
+
 ### séance 4
 faire l'admin
 

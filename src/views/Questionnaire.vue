@@ -1,26 +1,22 @@
 <template>
-  <div v-if="!cgfin">
-    <QuestionnaireComponent msg="Questionnaire : " :cgi=cgi />
+  <div>
+    <QuestionnaireComponent msg="Questionnaire : " :cgi=cgi v-bind:responseOK="false" />
     <b-form>
     <b-button type="submit" v-on:click="avant" variant="outline-primary">Question précédente</b-button>
-    <b-button type="submit" v-on:click="apres" variant="outline-primary" :hidden="cgfin">Question précédente</b-button>
+    <b-button type="submit" v-on:click="apres" variant="outline-primary" :hidden="cgfin">Question suivante</b-button>
     </b-form>
-      <p> question n°{{cgi}}/{{cgnbQuestions}}</p>
-  </div>
-  <div v-else>
-    <b-button  v-b-popover.hover.top="'Votre score actuel ne sera pas enregistré'" type="submit" v-on:click="recommencer" variant="outline-primary">recommencer</b-button>
-    <ResultComponent />
+      <p> question n°{{cgi}}/{{cgnbQuestions -1 }}</p>
   </div>
 </template>
 <script>
 import QuestionnaireComponent from '@/components/QuestionnaireComponent.vue'
-import ResultComponent from '@/components/ResultComponent.vue'
 import test from '@/assets/questionnaire.json'
 export default {
   name: 'test',
   data () {
     return {
       cgi: 0,
+      responseOK: false,
       cgfin: false,
       cgnbQuestions: test['nbQuestions']
     }
@@ -31,8 +27,7 @@ export default {
     }
   },
   components: {
-    QuestionnaireComponent,
-    ResultComponent
+    QuestionnaireComponent
   },
   methods: {
     avant: function () {
@@ -49,10 +44,6 @@ export default {
       } else {
         this.cgfin = true
       }
-    },
-    recommencer: function () {
-      this.cgfin = false
-      this.cgi = 0
     }
   }
 }

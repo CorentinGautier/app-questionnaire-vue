@@ -3,12 +3,12 @@
     "test": [
         {
             "id": "0",
-            "question": "qui est le créateur de l'iphone 11?",
+            "question": "Qui est le créateur de l'iphone 11?",
             "options": [
                 {
                     "intitule": "Apple",
                     "reponse_user": false,
-                    "valide": false
+                    "valide": true
                 },
                 {
                     "intitule": "Huawei",
@@ -39,7 +39,7 @@
                 {
                     "intitule": "Paris",
                     "reponse_user": false,
-                    "valide": false
+                    "valide": true
                 }
             ]
         },
@@ -55,7 +55,7 @@
                 {
                     "intitule": "j'adore",
                     "reponse_user": false,
-                    "valide": false
+                    "valide": true
                 },
                 {
                     "intitule": "bof",

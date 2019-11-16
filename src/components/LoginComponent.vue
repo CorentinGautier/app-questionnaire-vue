@@ -72,7 +72,6 @@ export default {
   border: 1px solid #cccccc;
   background-color: #ffffff;
   margin: auto;
-  margin-top: 200px;
   padding: 20px;
 }
 </style>
