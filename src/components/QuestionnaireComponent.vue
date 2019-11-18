@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div v-if = '!displayScore'>
+    <div v-if = '!cgdisplayScore'>
      <h1 class="mb-4 container">{{msg}}</h1>
      <b-card :header="test[cgi].question" header-tag="header">
       <b-list-group v-if='responseOK' >
@@ -18,17 +18,17 @@
         </b-list-group-item>
       </b-list-group>
       </b-card>
-      <b-alert show>Votre score est : {{ score }} / {{ tailleQuestionnaire }}</b-alert>
+      <b-alert show>Votre score est : {{ cgscore }} / {{ tailleQuestionnaire }}</b-alert>
       <br/>
     <b-button type="submit" v-on:click="recommencer" variant="outline-primary">Recommencer</b-button>
     </div>
  <br/>
- <div v-if = 'displayScore'>
+ <div v-if = 'cgdisplayScore'>
   <h1>Bravo, vous avez fini ! </h1>
     <b-button type="submit" v-on:click="recommencer" variant="outline-primary">Recommencer</b-button>
     <br/>
- <b-alert show variant="success">Votre score est : {{ score }} / {{ tailleQuestionnaire }}</b-alert>
- <b-alert show variant="danger">Votre nombre d'erreur est de : {{ nbErreur }}</b-alert>
+ <b-alert show variant="success">Votre score est : {{ cgscore }} / {{ tailleQuestionnaire }}</b-alert>
+ <b-alert show variant="danger">Votre nombre d'erreur est de : {{ cgnbErreur }}</b-alert>
  </div>
 </div>
 </template>
@@ -39,12 +39,10 @@ export default {
     return {
       test: test.test,
       tailleQuestionnaire: test['nbQuestions'],
-      score: 0,
-      resp: String,
-      displayScore: false,
-      passage: 0,
-      messages: [],
-      nbErreur: 0
+      cgscore: 0,
+      cgdisplayScore: false,
+      cgpassage: 0,
+      cgnbErreur: 0
     }
   },
   name: 'QuestionnaireComponent',
@@ -55,32 +53,31 @@ export default {
   },
   methods: {
     action: function (cgindex) {
-      if (this.passage === this.cgi) {
+      if (this.cgpassage === this.cgi) {
         // cherche le libellé de la réponse
         if (test.test[this.cgi].options[cgindex].valide === true) {
-          this.resp = test.test[this.cgi].options[cgindex].intitule
-          this.score = this.score + 1
+          this.cgscore = this.cgscore + 1
           this.responseOK = true
         }
       } else {
-        this.passage = this.cgi
+        this.cgpassage = this.cgi
         this.responseOK = false
-        this.nbErreur = this.nbErreur + 1
+        this.cgnbErreur = this.cgnbErreur + 1
       }
-      if (this.score === test['nbQuestions']) {
-        this.displayScore = true
+      if (this.cgscore === test['nbQuestions']) {
+        this.cgdisplayScore = true
       }
-      console.log(this.passage)
+      console.log(this.cgpassage)
       console.log(this.cgi)
-      console.log(this.score)
-      console.log(this.nbErreur)
+      console.log(this.cgscore)
+      console.log(this.cgnbErreur)
     },
     recommencer: function () {
       this.cgfin = false
       this.cgi = 0
       this.responseOK = false
-      this.score = 0
-      this.displayScore = false
+      this.cgscore = 0
+      this.cgdisplayScore = false
     }
   }
 }
