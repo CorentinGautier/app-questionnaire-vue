@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <DashBoardComponent msg="Welcome to you !"/>
+    <DashBoardComponent msg="Bienvenue"/>
     <!-- ajoute le composant menu pour ce déplacer dans l'app -->
   </div>
 </template>

@@ -45,12 +45,12 @@ export default {
       ) {
         var lui = this
         var user = { // creer un obj user avec ce que l'utilisateur a rentrée
-          _id: Math.random().toString(36).substr(2, 9), // créer un id aléatoire
+          _id: new Date(), // créer un id avec la date lors de la connexion
           firstname: lui.cguserFirstname,
           lastName: lui.cguserLastname,
           socityName: lui.cgsocietyName
         }
-        console.log(user)
+        // console.log(user)
         db.put(user).then(function (doc) { // ajout l'user dans la bdd
           console.log(doc)// retourne le doc avec ce qu'on a inserer dans la bdd
           lui.$router.push(
@@ -64,7 +64,7 @@ export default {
         })
       } else {
         // log d'erreur
-        console.log('Please put your first/last name and your society name.')
+        // console.log('Please put your first/last name and your society name.')
       }
     }
   }

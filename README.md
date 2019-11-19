@@ -1,4 +1,6 @@
-url de déploiment : 
+url de déploiment :  https://corentingautier.github.io/#/
+
+Si erreur contactez-moi : corentin.gautier@epsi.fr
 
 ### séance 1  : 23 octobre
 Objectif : finir le login avec un cposant
@@ -13,7 +15,6 @@ des problèmes lors de l'affichages des questions du json
 Objectif : finir l'affichage des questions dans le json et afficher les résultats des questions à la fin du questionnaire
 ok : enregistre les utilisateurs dans la BDD avec coucheDB
 permet de se balader entre les questions de mon JSON
-
 
 ### travail chez moi 1 : 30 octobre
 Essayer de recupérer les réponses de l'utilisateur et ensuite de modifier le score si sa réponse est bonne
@@ -51,7 +52,9 @@ pemret de recommencer, de refaire un question si le score est pas bon
 affiche le nb d'erreur si l'utilisteur en fait
 
 ### séance 4 : 19 novembre
-faire l'admin
+faire l'admin --> affichage des utilisateurs qui se sont connectés pour répondre au questionnaire
+mettre un ligne l'app web 
+quelques ajustements sur le score
 
 
 
