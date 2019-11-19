@@ -1,6 +1,10 @@
 url de déploiment :  https://corentingautier.github.io/#/
 
-Si erreur contactez-moi : corentin.gautier@epsi.fr
+Si problème contactez-moi : corentin.gautier@epsi.fr
+
+Mot de passe pour l'admin : login: 'login' et password: 'password'
+
+Dans le BDD, à la fin du projet, l'id de chaque utilisteur est une variable de type date créer au lancement de l'app, au début non.
 
 ### séance 1  : 23 octobre
 Objectif : finir le login avec un cposant
@@ -55,6 +59,7 @@ affiche le nb d'erreur si l'utilisteur en fait
 faire l'admin --> affichage des utilisateurs qui se sont connectés pour répondre au questionnaire
 mettre un ligne l'app web 
 quelques ajustements sur le score
+Admin bloqué si pas les codes pour y accèder, login : login et passaword : password
 
 
 

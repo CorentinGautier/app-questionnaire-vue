@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p> Voici les différentes choses que vous pouvez faire dans cette petite application web, il faut se connecter pour pouvoir répondre au questionnaire</p>
+    <p> Voici les différentes choses que vous pouvez faire dans cette petite application web, il faut se connecter pour pouvoir répondre au questionnaire.</p>
+    <p> La page admin propose d'afficher les utilisateurs qui ont répondu au questionnaire.</p>
        <br>
       <router-link to="/about">About</router-link>
       <br>

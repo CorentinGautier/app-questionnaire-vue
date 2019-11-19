@@ -3,33 +3,37 @@
     <div v-if = '!cgdisplayScore'>
      <h1 class="mb-4 container">{{msg}}</h1>
      <b-card :header="test[cgi].question" header-tag="header">
+      <!-- bloque les question si la réponse est bonne -->
       <b-list-group class="red" v-if='responseOK' >
-        <b-list-group-item   disabled v-for="(option,cgindex) in test[cgi].options" :key="option.intitule" @click="action(cgindex)">
-           <b-list-group-item name="question" v-model="option.reponse_user" :value="true">
+        <b-list-group-item disabled v-for="(option,cgindex) in test[cgi].options" :key="option.intitule" @click="action(cgindex)">
+           <b-list-group-item  active name="question" v-model="option.reponse_user" :value="true">
              {{option.intitule}}
             </b-list-group-item>
         </b-list-group-item>
       </b-list-group>
+      <!--  affichage des questions -->
       <b-list-group v-if='!responseOK' >
-        <b-list-group-item  v-for="(option,cgindex) in test[cgi].options" :key="option.intitule" @click="action(cgindex)">
+        <b-list-group-item v-for="(option,cgindex) in test[cgi].options" :key="option.intitule" @click="action(cgindex)">
           <b-list-group-item name="question" v-model="option.reponse_user" :value="true">
             {{option.intitule}}
           </b-list-group-item>
         </b-list-group-item>
       </b-list-group>
       </b-card>
-      <b-alert show>Votre avancement est : {{ cgavancement }} / {{ tailleQuestionnaire }}</b-alert>
+      <!-- information sur la placement et sur le nombre d'erreur du joueur -->
+      <b-alert show>Votre avancement est : {{ cgavancement }} / {{ cgtailleQuestionnaire }}</b-alert>
       <b-alert show variant="danger">Votre nombre d'erreur est de : {{ cgnbErreur }}</b-alert>
       <br/>
     <b-button type="submit" v-on:click="recommencer" variant="outline-primary">Recommencer</b-button>
     </div>
  <br/>
+ <!-- affiché a la fin des questions -->
  <div v-if = 'cgdisplayScore'>
   <h1>Bravo, vous avez fini ! </h1>
     <b-button type="submit" v-on:click="recommencer" variant="outline-primary">Recommencer</b-button>
     <br/>
     <br/>
- <b-alert show variant="success">Votre score est : {{ cgavancement }} / {{ tailleQuestionnaire }}</b-alert>
+ <b-alert show variant="success">Votre avancement est de : {{ cgavancement }} / {{ cgtailleQuestionnaire }}</b-alert>
  <b-alert show variant="danger">Votre nombre d'erreur est de : {{ cgnbErreur }}</b-alert>
  <b-alert show variant="info">Votre score final est : {{ cgavancement - cgnbErreur }}</b-alert>
  </div>
@@ -41,10 +45,10 @@ export default {
   data () {
     return {
       test: test.test,
-      tailleQuestionnaire: test['nbQuestions'],
+      cgtailleQuestionnaire: test['nbQuestions'],
       cgavancement: 0,
       cgdisplayScore: false,
-      cgpassage: 0,
+      cgpassage: 1,
       cgnbErreur: 0
     }
   },
@@ -53,6 +57,10 @@ export default {
     msg: String,
     cgi: Number,
     responseOK: Boolean
+  },
+  created: function () {
+    // function au lancement du composant
+    this.cgi = this.cgi + 1
   },
   methods: {
     action: function (cgindex) {
@@ -70,7 +78,7 @@ export default {
         this.cgnbErreur = this.cgnbErreur + 1
       }
       if (this.cgavancement === test['nbQuestions']) {
-        // verification si la fin du fichier est présente ou pas
+        // verification si la fin du fichier est maintenant ou pas
         this.cgdisplayScore = true
       }
     },
