@@ -34,7 +34,6 @@ export default {
         attachments: true
       }).then(function (result) {
         cgvm.cgusers = result.rows
-        console.log(result)
         cgvm.display = true
       })
     }
