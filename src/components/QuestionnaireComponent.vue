@@ -19,6 +19,7 @@
       </b-list-group>
       </b-card>
       <b-alert show>Votre score est : {{ cgscore }} / {{ tailleQuestionnaire }}</b-alert>
+      <b-alert show variant="danger">Votre nombre d'erreur est de : {{ cgnbErreur }}</b-alert>
       <br/>
     <b-button type="submit" v-on:click="recommencer" variant="outline-primary">Recommencer</b-button>
     </div>
@@ -27,8 +28,10 @@
   <h1>Bravo, vous avez fini ! </h1>
     <b-button type="submit" v-on:click="recommencer" variant="outline-primary">Recommencer</b-button>
     <br/>
+    <br/>
  <b-alert show variant="success">Votre score est : {{ cgscore }} / {{ tailleQuestionnaire }}</b-alert>
  <b-alert show variant="danger">Votre nombre d'erreur est de : {{ cgnbErreur }}</b-alert>
+ <b-alert show variant="info">Votre score final est : {{ cgscore - cgnbErreur }}</b-alert>
  </div>
 </div>
 </template>
@@ -54,23 +57,21 @@ export default {
   methods: {
     action: function (cgindex) {
       if (this.cgpassage === this.cgi) {
-        // cherche le libellé de la réponse
+        // cherche si la réponse choisi est considéré comme vrai dans le json
         if (test.test[this.cgi].options[cgindex].valide === true) {
           this.cgscore = this.cgscore + 1
           this.responseOK = true
         }
       } else {
+        // si la réponse choisi est fausse
         this.cgpassage = this.cgi
         this.responseOK = false
         this.cgnbErreur = this.cgnbErreur + 1
       }
       if (this.cgscore === test['nbQuestions']) {
+        // verification si la fin du fichier est présente ou pas
         this.cgdisplayScore = true
       }
-      console.log(this.cgpassage)
-      console.log(this.cgi)
-      console.log(this.cgscore)
-      console.log(this.cgnbErreur)
     },
     recommencer: function () {
       this.cgfin = false

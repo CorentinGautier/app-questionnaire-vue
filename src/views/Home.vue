@@ -2,11 +2,12 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <DashBoardComponent msg="Welcome to you !"/>
+    <!-- ajoute le composant menu pour ce déplacer dans l'app -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+// import du menu
 import DashBoardComponent from '@/components/DashBoardComponent.vue'
 
 export default {

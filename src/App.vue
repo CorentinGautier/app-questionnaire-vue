@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
+    <!-- menu pour ce déplacer dans l'app -->
       <router-link to="/">Home</router-link>|
-      <router-link to="/about">about</router-link>|
+      <router-link to="/about">About</router-link>|
       <router-link to="/login">Login</router-link>|
       <router-link to="/admin">Admin</router-link>
     </div>

@@ -1,3 +1,5 @@
+url de déploiment : 
+
 ### séance 1  : 23 octobre
 Objectif : finir le login avec un cposant
 bcp de problème
@@ -47,10 +49,6 @@ Affichage des users dans l'admin NOK
 bloque les questions l'utilisateur à répondu
 pemret de recommencer, de refaire un question si le score est pas bon
 affiche le nb d'erreur si l'utilisteur en fait
-        a faire : ,
-  created: function () {
-		// this.$toast.add({ severity: 'warn', summary: 'Warn Message', detail: 'error', life: 3000 })
-  }
 
 ### séance 4 : 19 novembre
 faire l'admin
