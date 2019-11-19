@@ -1,7 +1,7 @@
 <template>
   <div>
     <QuestionnaireComponent msg="Questionnaire : " :cgi=cgi v-bind:cgresponseOK="false" />
-    <b-form v-if="cgi < cgnbQuestions">
+    <b-form>
     <!-- pour se balader entre les questions -->
     <b-button type="submit" v-on:click="avant" variant="outline-primary">Question précédente</b-button>
     <b-button type="submit" v-on:click="apres" variant="outline-primary" :hidden="cgfin">Question suivante</b-button>

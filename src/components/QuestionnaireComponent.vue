@@ -61,23 +61,23 @@ export default {
   created: function () {
     // function au lancement du composant
     this.cgi = this.cgi + 1
+    this.passage = this.cgi
   },
   methods: {
     action: function (cgindex) {
       var valide = test.test[this.cgi].options[cgindex].valide
-      if (this.cgpassage === this.cgi) {
-        // cherche si la réponse choisi est considéré comme vrai dans le json
-        if (valide === true) {
-          this.cgavancement = this.cgavancement + 1
-          this.responseOK = true
-        }
+      // cherche si la réponse choisi est considéré comme vrai dans le json
+      if (valide === true) {
+        this.cgavancement = this.cgavancement + 1
+        this.responseOK = true
+        this.passage = this.passage + 1
       } else {
         // si la réponse choisi est fausse
         this.cgpassage = this.cgi
         this.responseOK = false
         this.cgnbErreur = this.cgnbErreur + 1
       }
-      if (this.cgavancement === test['nbQuestions']) {
+      if (this.cgavancement === this.cgtailleQuestionnaire) {
         // verification si la fin du fichier est maintenant ou pas
         this.cgdisplayScore = true
       }
@@ -87,6 +87,7 @@ export default {
       this.cgi = 0
       this.responseOK = false
       this.cgavancement = 0
+      this.cgpassage = 0
       this.cgdisplayScore = false
       this.cgnbErreur = 0
     }
